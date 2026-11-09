@@ -13,7 +13,7 @@ private:
 
     BSNode<T>* search(BSNode<T>* n, T e) const {
         if (n == nullptr) {
-            throw std::runtime_error("Element not found");
+            throw std::runtime_error("Element not found!");
         } else if (n->elem < e) {
             return search(n->right, e);
         } else if (n->elem > e) {
@@ -28,7 +28,7 @@ private:
             nelem++;
             return new BSNode<T>(e);
         } else if (n->elem == e) {
-            throw std::runtime_error("Duplicated element");
+            throw std::runtime_error("Duplicated element!");
         } else if (n->elem < e) {
             n->right = insert(n->right, e);
         } else {
@@ -47,7 +47,7 @@ private:
 
     BSNode<T>* remove(BSNode<T>* n, T e) {
         if (n == nullptr) {
-            throw std::runtime_error("Element not found");
+            throw std::runtime_error("Element not found!");
         } else if (n->elem < e) {
             n->right = remove(n->right, e);
         } else if (n->elem > e) {
@@ -68,7 +68,7 @@ private:
 
     T max(BSNode<T>* n) const {
         if (n == nullptr) {
-            throw std::runtime_error("Element not found");
+            throw std::runtime_error("Element not found!");
         } else if (n->right != nullptr) {
             return max(n->right);
         } else {
